@@ -1,0 +1,10 @@
+---
+
+- block:
+
+  - include: dependencies.yml
+
+  - include: jenkins.yml
+    when: "'jenkins-master' in group_names"
+
+  when: ansible_os_family == 'RedHat'

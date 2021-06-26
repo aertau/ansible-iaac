@@ -1,0 +1,7 @@
+---
+
+- name: Install Java
+  yum:
+    name: java-11-openjdk-devel
+    state: present
+    update_cache: false
