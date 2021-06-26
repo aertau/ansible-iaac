@@ -1,0 +1,17 @@
+---
+
+- name: Add Postgresql signing Key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state: present
+
+- name: Add Postgresql Repo
+  apt_repository:
+    repo: deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main
+    state: present
+    filename: postgresql
+
+- name: Install Postgresql
+  apt:
+    name: "postgresql-{{ postgresql_version }}"
+    state: present

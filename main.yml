@@ -4,3 +4,9 @@
   become: true
   roles:
     - { role: jenkins, tags: jenkins }
+
+- name: Install Postgresql
+  hosts: postgresql
+  become: true
+  roles:
+    - { role: postgresql, tags: postgresql }
